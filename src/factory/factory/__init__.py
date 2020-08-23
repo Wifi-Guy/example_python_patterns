@@ -1,4 +1,4 @@
-from .instantiations import BackwardFactory, ForwardFactory
+from ._instantiations import BackwardFactory, ForwardFactory
 
 
 def factory(factory_type: str = 'forward'):

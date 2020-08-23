@@ -1,4 +1,4 @@
-from ..base import BaseFactory
+from .._base import BaseFactory
 
 
 class BackwardFactory(BaseFactory):
