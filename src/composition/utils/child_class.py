@@ -2,7 +2,7 @@ from typing import List
 
 
 class ChildClass:
-    _persist_methods = ['class_name', 'attribute_calling_hidden_attribute']  # Methods that the subclass can access
+    _persist_methods = []  # Methods that the subclass can access
 
     def __init__(self, persister: object, persist_methods: List = None):
         if persist_methods is None:

@@ -1,9 +1,9 @@
-from composition.functions import ParentClass, ChildClass
+from src.composition.utils import ParentClass, ChildClass
 
 
 if __name__ == '__main__':
-    child_class = ChildClass(ParentClass)
-    # 1. We can create a class with the default methods and hide additional from it
+    child_class = ChildClass(ParentClass, persist_methods=['class_name', 'attribute_calling_hidden_attribute'])
+    # We can pass default methods to be shown
     print(child_class.class_name())
     print(child_class.attribute_calling_hidden_attribute())
     try:
@@ -16,12 +16,12 @@ if __name__ == '__main__':
     except BaseException as exc:
         print(f'Exception: {type(exc)}: {exc}')
 
-    child_class_2 = ChildClass(ParentClass, persist_methods=['example_method'])
-    # 2. or we can add additional methods that can be accessed
+    child_class_2 = ChildClass(ParentClass,
+                               persist_methods=['class_name', 'attribute_calling_hidden_attribute', 'example_method'])
     print(child_class_2.class_name())
     print(child_class_2.attribute_calling_hidden_attribute())
     print(child_class_2.example_method())
     try:
-        print(child_class_2._hidden_attribute())  # 3. either way we can create a 'private' class object
+        print(child_class_2._hidden_attribute())
     except BaseException as exc:
         print(f'Exception: {type(exc)}: {exc}')
