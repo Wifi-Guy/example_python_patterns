@@ -2,7 +2,7 @@ from src.factory.factory import factory
 
 
 if __name__ == '__main__':
-    forward_factory = factory('forward')
+    forward_factory = factory('forward')  # In actual code wed use hidden logic for this to switch objects
     backward_factory = factory('backward')
 
     print(forward_factory.func_1())
